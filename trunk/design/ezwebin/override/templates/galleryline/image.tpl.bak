@@ -1,0 +1,19 @@
+{*?template charset=utf-8?*}
+{* Image - Gallery line view *}
+<div class="content-view-galleryline">
+    <div class="class-image">
+
+    <div class="attribute-image">
+
+    <a href={$node.object.data_map.image.object.data_map.image.content[imagelarge].url|ezroot()} rel="lightbox[galley]" title="{$node.object.data_map.name.content|wash()} {$node.object.data_map.caption.content.output.output_text|wash()}"><img src={$node.object.data_map.image.object.data_map.image.content[gallerythumbnail].url|ezroot()}  alt="{$node.object.data_map.name.content|wash()}" title="{$node.object.data_map.name.content|wash()}" /></a>    
+
+    </div>
+    <div class="attribute-caption">
+        <p>{attribute_view_gui attribute=$node.data_map.name}</p>
+ 
+    </div>
+{if or( $node.$object.can_edit, $node.$object.can_remove )}
+      <a href={$node.$object.main_node.url_alias|ezurl}> [Dieses Bild &auml;ndern]</a>
+{/if}
+    </div>
+</div>
